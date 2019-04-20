@@ -1,1 +1,1 @@
-Theses are all my algorithms that solve arithmetic problems.
+These are all my algorithms that solve arithmetic problems.
