@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+
+#This program finds the HCF or the Highest common factor of 2 numbers, x and y
+
+def hcf(a, b):
+    while b > 0:
+        rem = a % b
+        return hcf(b, rem)
+    
+    return a
+
+print hcf(121, 66)
