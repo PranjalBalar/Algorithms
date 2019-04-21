@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-#This program finds the HCF or the Highest common factor of 2 numbers, x and y
+#This program finds the HCF or the Highest common factor of 2 numbers, 121 and 66
 
 def hcf(a, b):
     while b > 0:
@@ -9,4 +9,4 @@ def hcf(a, b):
     
     return a
 
-print hcf(121, 66)
+print "HCF of 121 and 66 is", hcf(121, 66)
