@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 #This program prints all the prime numbers between 0 and 1000
 #It has a complexity of n²
 
