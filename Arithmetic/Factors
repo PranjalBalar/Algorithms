@@ -1,0 +1,28 @@
+# -*- coding: utf-8 -*-
+
+#This program lists all the factors of any number stored in the variable "number"
+# which in this case is 66
+
+import math
+
+factors = []
+number = 66
+
+while (number % 2) == 0:
+    factors.append(2)
+    number = number/2
+
+factor = 3
+stop = math.sqrt(number)
+
+while factor <= stop:
+    while (number % factor) == 0:
+        factors.append(factor)
+        number = number / factor
+        stop = math.sqrt(number)
+    factor =  factor + 2
+    
+if number > 1:
+    factors.append(number)
+    
+print "Factors of", number, "is", factors
