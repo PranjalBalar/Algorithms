@@ -1,0 +1,41 @@
+# -*- coding: utf-8 -*-
+
+#This program sorts a random array using merge sort
+#The complexity of this program is n log n
+
+import random
+list = []
+for i in range(10):
+    list.append(random.randint(1, 100))
+print "List to be sorted:", list
+
+def divide(l):
+    n = len(l)
+    if n == 1:
+        return l
+    l1 = l[0:n/2]
+    l2 = l[n/2:n]
+    
+    l1 = divide(l1)
+    l2 = divide(l2)
+    
+    return merge(l1, l2)
+    
+def merge(a, b):
+    c = []
+    i = 0
+    j = 0
+    while i < len(a) and j < len(b):
+        if a[i] > b[j]:
+            c.append(b[j])
+            j += 1
+        else:
+            c.append(a[i])
+            i += 1
+    for n in range(j, len(b)):
+        c.append(b[n])
+    for x in range(i, len(a)):
+        c.append(a[x])
+    return c
+        
+print "Sorted list:", divide(list)
