@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+
+#This program prints the first 10 elements of fibonacci series using recursion
+global fbnc
+fbnc = dict({0:0, 1:1})
+
+def fibonacci(x):
+    global fbnc
+    fib = fbnc.get(x)
+    if fib == None:
+        fib = fibonacci(x - 1) + fibonacci(x - 2)
+        fbnc[x] = fib
+    return fib
+        
+fibonacci(10)
+print "The first 10 elements of fibonacci series are:"
+print fbnc
