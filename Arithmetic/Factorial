@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+
+#This program finds the factorial of a number n using recursion
+n = 10
+def factorial(x):
+    if x == 0:
+        return 1
+    else:
+        return x * factorial(x - 1)
+    
+print "The factorial of", n, "is", factorial(n)
