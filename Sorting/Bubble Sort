@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+
+#This program sorts an array using bubble sort
+#The complexity of this algorithm is n²
+
+import random
+list = []
+for i in range(10):
+    list.append(random.randint(1, 100))
+print list
+
+for i in range(len(list)):
+    for j in range(len(list) - i - 1):
+        x = list[j + 1]
+        if list[j] > x:
+            z = list[j]
+            list[j] = x
+            list[j + 1] = z
+            
+print list
