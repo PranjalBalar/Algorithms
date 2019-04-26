@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+
+#This program finds a number x using the binary search
+#The complexity of this program logN
+
+import random
+list = []
+for i in range(100):
+    list.append(random.randint(1, 100))
+list.sort()
+print list
+count = 0
+
+x = 78
+   
+def search(x, n1, n2):
+    if n1 >= n2:
+        return None
+    
+    n = n1 + n2
+    
+    if list[n/2] == x:
+        return n/2
+    
+    elif list[n/2] > x:
+        return search(x, n1, n/2 - 1)
+    
+    elif list[n/2] < x:
+        return search(x, n/2 + 1, n2)   
+    
+    else:
+        return None
+    
+print ""
+print x, "is at index:", search(x, 0, len(list) - 1)
