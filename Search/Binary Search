@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-#This program finds a number x using the binary search
+#This program finds a number x in an array using the binary search
 #The complexity of this program logN
 
 import random
