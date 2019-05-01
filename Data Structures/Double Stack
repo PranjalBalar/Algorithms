@@ -1,0 +1,55 @@
+# -*- coding: utf-8 -*-
+
+#This program creates a double stack using an array
+#It contains 6 methods: 
+#push_left and push_right method push the value to respective sides
+#pop_left and pop_left methos pop a value from the respective side
+#move_left and move_right method moves a value from the opposite side to the respective side
+
+class DoubleStack:
+    def __init__ (self):
+        self.a = [None] * 20
+        self.left = 0
+        self.right = 19
+        
+    def push_left(self, x):
+        if self.a[self.left] == None:
+            self.a[self.left] = x
+            self.left += 1
+            return self.a
+        else:
+            print "Can't Push" 
+        
+    def push_right(self, x):
+        if self.a[self.right] == None:
+            self.a[self.right] = x
+            self.right -= 1
+            return self.a
+        else:
+            print "Can't Push"
+    
+    def pop_left(self):
+        if self.left == 0:
+            return None
+        x = self.a[self.left - 1]
+        self.a[self.left - 1] = None 
+        self.left -= 1
+        return x
+    
+    def pop_right(self):
+        if self.right == 0:
+            return None
+        x = self.a[self.right + 1]
+        self.a[self.right + 1] = None 
+        self.right += 1
+        return x
+    
+    def move_left(self):
+        self.pushl(self.popr())
+        return self.a
+    
+    def move_right(self):
+        self.pushr(self.popl())
+        return self.a
+    
+double_stack = DoubleStack()
