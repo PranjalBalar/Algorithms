@@ -1,0 +1,39 @@
+# -*- coding: utf-8 -*-
+
+#This program creates a circular queue using an array
+
+class Queue:
+    def __init__ (self):
+        self.a = [None] * 10
+        self.head = -1
+        self.tail = -1
+        self.size = 0
+        
+    def push(self, x):
+        if self.size >= 10:
+            print "Array full"
+            return -1
+            
+        if self.head == -1:
+            self.head += 1
+            
+        if self.tail == 9:
+            self.tail = 0
+            self.a[0] = x
+            self.size += 1
+            return self.tail
+        
+        else:
+            self.tail += 1
+            self.a[self.tail] = x
+            self.size += 1
+            return self.tail
+    
+    def pop(self):
+        n = self.head
+        self.head += 1
+        self.a[n] = None
+        self.size -= 1
+        return self.head
+
+queue1 = Queue()
