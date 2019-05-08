@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+
+#This program sorts an array using heapsort
+#The complexity of this program is NLogN
+
+import heapq
+
+def heapSort(arr): 
+    n = len(arr) 
+  
+    for i in range(n, -1, -1): 
+        heapq.heapify(arr) 
+  
+    for i in range(n-1, 0, -1): 
+        arr[i], arr[0] = arr[0], arr[i] # swap 
+        heapq.heapify(arr) 
+  
+l = [ 12, 11, 13, 5, 6, 7] 
+heapSort(l) 
+n = len(l) 
+
+print ("Sorted array is:") 
+for i in range(n): 
+    print ("%d" %l[i]) 
