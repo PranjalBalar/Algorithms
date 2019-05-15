@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+
+#This program searches a number in the list using interpolation search
+#The complexity of this program in the best case is O(log log N) while in the worst case it is O(N)
+def interpolationSearch(l, n, x):
+    
+    minval = 0
+    maxval = n - 1
+    
+    while minval <= maxval and x >= l[minval] and x <= l[maxval]:
+        
+        if minval == maxval:
+            if minval == x:
+                return minval
+            return None
+        
+        est = minval + (float((x - l[minval])/(l[maxval]-l[minval]))) * (maxval-minval)
+        
+        if l[est] == x:
+            return est
+        
+        else:
+            if l[est] < x:
+                minval = est + 1
+                
+            elif l[est] > x:
+                maxval = est - 1
+                
+    return None
+    
+arr = [10, 12, 13, 16, 18, 19, 20, 21, 22, 23, 24, 33, 35, 42, 47] 
+n = len(arr) 
+x = 8 
+index = interpolationSearch(arr, n, x) 
+  
+if index != None: 
+    print "Element found at index",index 
+else: 
+    print "Element not found"
+            
