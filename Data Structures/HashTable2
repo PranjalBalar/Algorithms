@@ -5,9 +5,9 @@
 l = [None] * 10
 
 class Node:  
-    def __init__(self, obj, value):
+    def __init__(self, key, value):
     	self.value = value
-        self.item = obj
+        self.key = key
         self.next_node = None
         self.prev_node = None
 
@@ -17,14 +17,14 @@ class HashTable():
 		self.lst = lst
 		self.len = len(self.lst)
 
-	def add(self, x, value):
-		n = hash(x) % self.len
+	def add(self, key, value):
+		n = hash(key) % self.len
 		if self.lst[n] == None:
-			self.lst[n] = Node(x, value)
+			self.lst[n] = Node(key, value)
 			return self.lst
 		else:
 			a = self.check_add(self.lst[n])
-			a.next_node = Node(x, value)	
+			a.next_node = Node(key, value)	
 			return self.lst
 
 	def check_add(self, node):
@@ -33,21 +33,21 @@ class HashTable():
 		else:
 			return self.check_add(node.next_node)
 
-	def get(self, x):
-		n = hash(x) % self.len
-		if self.lst[n].item == x:
+	def get(self, key):
+		n = hash(key) % self.len
+		if self.lst[n].key == key:
 			return self.lst[n].value
 		else:
-			a = self.check_get(x, self.lst[n])
+			a = self.check_get(key, self.lst[n])
 			if a != None:
 				return a.value
 			else:
 				return None
 
-	def check_get(self, x, node):
+	def check_get(self, key, node):
 		if node.next_node == None:
 			return None
-		elif node.next_node.item == x:
+		elif node.next_node.key == key:
 			return node.next_node
 		else:
 			return self.check_get(node.next_node)
