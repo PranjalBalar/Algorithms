@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-#This program creates a hash table using linear probing 
+#This program creates a hash table using quadratic probing 
 l = [None] * 10
 
 class HashTable():
