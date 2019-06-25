@@ -24,5 +24,5 @@ def triangle(level, top_point, left_point, right_point):
 	triangle(level-1, left_mid, left_point, bottom_mid)
 	triangle(level-1, right_mid, bottom_mid, right_point)
 
-triangle(3, (60, 106.6), (10, 20), (110, 20))
+triangle(4, (60, 106.6), (10, 20), (110, 20))
 mainloop()
